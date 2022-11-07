@@ -1,5 +1,6 @@
 import typescript from '@rollup/plugin-typescript'
 import dts from 'rollup-plugin-dts'
+import babel from '@rollup/plugin-babel'
 
 export default [
   {
@@ -9,7 +10,12 @@ export default [
       format: 'esm'
     },
     plugins: [
-      typescript()
+      typescript(),
+      babel({
+        babelHelpers: 'bundled',
+				exclude: 'node_modules/**',
+      	extensions: ['.js', '.ts'],
+      })
     ]
   },
   {

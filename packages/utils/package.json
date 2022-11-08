@@ -1,6 +1,6 @@
 {
   "name": "@rayuse/utils",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "工具函数",
   "typings": "dist/index.d.ts",
   "module": "dist/index.esm.js",

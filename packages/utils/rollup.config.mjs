@@ -18,12 +18,20 @@ export default [
       })
     ]
   },
+  // tree
   {
-    input: './typings/index.d.ts',
+    input: 'src/tree/index.ts',
     output: {
-      file: 'dist/index.d.ts',
-      format: 'es'
+      file: 'dist/tree/index.esm.js',
+      format: 'esm'
     },
-    plugins: [dts()]
+    plugins: [
+      typescript(),
+      babel({
+        babelHelpers: 'bundled',
+				exclude: 'node_modules/**',
+      	extensions: ['.js', '.ts'],
+      })
+    ]
   }
 ]
